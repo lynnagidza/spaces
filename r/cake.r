@@ -7,5 +7,11 @@ ncol=5,
 rownames(flavours) = c("M N", "T O", "F M", "K M", "B K", "C M", "D G","A W")
 colnames(flavours) = c("1", "2", "3", "4", "5")
   
-cat("People's choice:\n")
 print(flavours)
+getmode <- function(fave) {
+ theone <- unique(fave)
+ theone[which.max(tabulate(match(fave, theone)))]
+}
+winner = getmode(flavours)
+cat("People's choice: ")
+print(winner)
